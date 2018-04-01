@@ -2,4 +2,9 @@
     <string name="app_name">NewVista for Seller</string>
     <string name="pause">Pause</string>
     <string name="resume">Resume</string>
+
+    <string name="loading0">Loading</string>
+    <string name="loading1">Loading.</string>
+    <string name="loading2">Loading..</string>
+    <string name="loading3">Loading...</string>
 </resources>

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.ResultPoint;
@@ -124,10 +125,23 @@ public class MainActivity
 
         // Add preview of scanned barcode
         qrCodePreview.setImageBitmap(result.getBitmapWithResultPoints(Color.YELLOW));
+
+        // Customer checked in
+        getPresenter().checkIn();
     }
 
     @Override
     public void possibleResultPoints(List<ResultPoint> resultPoints) {
 
+    }
+
+    @Override
+    public String onGetDecodedText() {
+        return decodedText;
+    }
+
+    @Override
+    public void onMakeToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 }
