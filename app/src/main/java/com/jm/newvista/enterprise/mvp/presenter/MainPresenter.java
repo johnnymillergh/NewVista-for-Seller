@@ -2,6 +2,7 @@ package com.jm.newvista.enterprise.mvp.presenter;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
+import com.jm.newvista.enterprise.bean.CheckinEntity;
 import com.jm.newvista.enterprise.bean.CustomerOrderEntity;
 import com.jm.newvista.enterprise.mvp.base.BasePresenter;
 import com.jm.newvista.enterprise.mvp.model.MainModel;
@@ -18,22 +19,24 @@ public class MainPresenter extends BasePresenter<MainModel, MainView> {
 
     public void checkIn() {
         mainView = getView();
+        mainView.onDisplayLoadingDialog();
 
         String decodedText = mainView.onGetDecodedText();
-        CustomerOrderEntity orderEntity = null;
         try {
-            orderEntity = new Gson().fromJson(decodedText, CustomerOrderEntity.class);
+            CustomerOrderEntity orderEntity = new Gson().fromJson(decodedText, CustomerOrderEntity.class);
 
             if (!orderEntity.getIsUsed()) {
                 mainModel.postOrderInfo(orderEntity, new MainModel.PostOrderInfoListener() {
                     @Override
-                    public void onSuccess() {
-                        mainView.onMakeToast("Welcome to NewVista");
+                    public void onSuccess(String checkinEntityJson) {
+                        mainView.onDisplayTicketInfoDialog(checkinEntityJson);
+                        mainView.onDismissLoadingDialog();
                     }
 
                     @Override
                     public void onFailure(String errorMessage) {
                         mainView.onMakeToast(errorMessage);
+                        mainView.onDismissLoadingDialog();
                     }
                 });
             } else {
@@ -44,6 +47,8 @@ public class MainPresenter extends BasePresenter<MainModel, MainView> {
         } catch (JsonSyntaxException e) {
             e.printStackTrace();
             mainView.onMakeToast("Invalid QR code");
+        } finally {
+            mainView.onDismissLoadingDialog();
         }
     }
 }

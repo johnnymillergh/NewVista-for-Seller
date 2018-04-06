@@ -1,5 +1,9 @@
 package com.jm.newvista.enterprise.mvp.model;
 
+import android.util.Log;
+
+import com.google.gson.Gson;
+import com.jm.newvista.enterprise.bean.CheckinEntity;
 import com.jm.newvista.enterprise.bean.CustomerOrderEntity;
 import com.jm.newvista.enterprise.mvp.base.BaseModel;
 import com.jm.newvista.enterprise.util.NetworkUtil;
@@ -15,7 +19,6 @@ public class MainModel extends BaseModel {
 
     public void postOrderInfo(CustomerOrderEntity orderEntity, PostOrderInfoListener postOrderInfoListener) {
         HashMap<String, String> params = new HashMap<>();
-        params.put("orderOperation", "use");
         params.put("userId", String.valueOf(orderEntity.getUserId()));
 
         Date date = orderEntity.getOrderDatetime();
@@ -26,7 +29,11 @@ public class MainModel extends BaseModel {
         myOkHttp.post().url(NetworkUtil.ORDER_URL).params(params).tag(this).enqueue(new RawResponseHandler() {
             @Override
             public void onSuccess(int statusCode, String response) {
-                postOrderInfoListener.onSuccess();
+                if (response.contains("Error")) postOrderInfoListener.onFailure(response);
+                else {
+                    CheckinEntity checkinEntity = new Gson().fromJson(response, CheckinEntity.class);
+                    postOrderInfoListener.onSuccess(response);
+                }
             }
 
             @Override
@@ -42,7 +49,7 @@ public class MainModel extends BaseModel {
     }
 
     public interface PostOrderInfoListener {
-        void onSuccess();
+        void onSuccess(String checkinEntityJson);
 
         void onFailure(String errorMessage);
     }

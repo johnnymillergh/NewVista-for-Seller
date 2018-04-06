@@ -7,4 +7,5 @@
     <string name="loading1">Loading.</string>
     <string name="loading2">Loading..</string>
     <string name="loading3">Loading...</string>
+    <string name="back">Back</string>
 </resources>

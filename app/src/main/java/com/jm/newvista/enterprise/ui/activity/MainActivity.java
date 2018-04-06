@@ -14,14 +14,18 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.ResultPoint;
 import com.google.zxing.client.android.BeepManager;
 import com.jm.newvista.enterprise.R;
+import com.jm.newvista.enterprise.bean.CheckinEntity;
 import com.jm.newvista.enterprise.mvp.model.MainModel;
 import com.jm.newvista.enterprise.mvp.presenter.MainPresenter;
 import com.jm.newvista.enterprise.mvp.view.MainView;
 import com.jm.newvista.enterprise.ui.base.BaseActivity;
+import com.jm.newvista.enterprise.ui.dialog.LoadingAlertDialog;
+import com.jm.newvista.enterprise.ui.dialog.TicketDialogFragment;
 import com.journeyapps.barcodescanner.BarcodeCallback;
 import com.journeyapps.barcodescanner.BarcodeResult;
 import com.journeyapps.barcodescanner.DecoratedBarcodeView;
@@ -34,7 +38,8 @@ import java.util.List;
 public class MainActivity
         extends BaseActivity<MainModel, MainView, MainPresenter>
         implements MainView,
-        BarcodeCallback {
+        BarcodeCallback,
+        TicketDialogFragment.TicketDialogListener {
     private DecoratedBarcodeView barcodeView;
     private Button pause;
     private Button resume;
@@ -43,6 +48,10 @@ public class MainActivity
     private BeepManager beepManager;
 
     private String decodedText;
+
+    private LoadingAlertDialog loadingAlertDialog;
+
+    private CheckinEntity checkinEntity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,5 +152,29 @@ public class MainActivity
     @Override
     public void onMakeToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onDisplayLoadingDialog() {
+        loadingAlertDialog = new LoadingAlertDialog(this);
+        loadingAlertDialog.show();
+    }
+
+    @Override
+    public void onDismissLoadingDialog() {
+        if (loadingAlertDialog != null) loadingAlertDialog.dismiss();
+    }
+
+    @Override
+    public void onDisplayTicketInfoDialog(String checkinEntityJson) {
+        checkinEntity = new Gson().fromJson(checkinEntityJson, CheckinEntity.class);
+
+        TicketDialogFragment ticketDialogFragment = new TicketDialogFragment();
+        ticketDialogFragment.show(getSupportFragmentManager());
+    }
+
+    @Override
+    public CheckinEntity onGetTicketDialogListener() {
+        return checkinEntity;
     }
 }
