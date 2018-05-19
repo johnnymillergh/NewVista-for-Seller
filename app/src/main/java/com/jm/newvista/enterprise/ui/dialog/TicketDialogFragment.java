@@ -39,6 +39,7 @@ public class TicketDialogFragment extends DialogFragment {
     private TextView movieTitle;
     private TextView showtime;
     private TextView auditoriumName;
+    private TextView theaterName;
     private TextView seatLocation;
     private TextView isUsed;
     private TextView welcome;
@@ -65,6 +66,7 @@ public class TicketDialogFragment extends DialogFragment {
         movieTitle = view.findViewById(R.id.movieTitle);
         showtime = view.findViewById(R.id.showtime);
         auditoriumName = view.findViewById(R.id.auditoriumName);
+        theaterName = view.findViewById(R.id.theaterName);
         seatLocation = view.findViewById(R.id.seatLocation);
         isUsed = view.findViewById(R.id.isUsed);
         welcome = view.findViewById(R.id.welcome);
@@ -82,6 +84,7 @@ public class TicketDialogFragment extends DialogFragment {
         showtime.setText(dateStr);
 
         auditoriumName.setText(checkinEntity.getOrder().getAuditoriumName());
+        theaterName.setText(checkinEntity.getOrder().getTheaterName());
         seatLocation.setText(checkinEntity.getOrder().getSeatLocation());
 
         if (checkinEntity.getOrder().getIsUsed()) isUsed.setText("Yes");

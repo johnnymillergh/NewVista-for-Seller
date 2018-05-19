@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -167,6 +168,7 @@ public class MainActivity
 
     @Override
     public void onDisplayTicketInfoDialog(String checkinEntityJson) {
+        Log.v("checkinEntityJson", checkinEntityJson);
         checkinEntity = new Gson().fromJson(checkinEntityJson, CheckinEntity.class);
 
         TicketDialogFragment ticketDialogFragment = new TicketDialogFragment();

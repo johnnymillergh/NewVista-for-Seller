@@ -8,4 +8,13 @@
     <string name="loading3">加载中...</string>
     <string name="loading0">加载中</string>
     <string name="back">返回</string>
+    <string name="user_information">用户信息</string>
+    <string name="ticket_information">电影票信息</string>
+    <string name="movie_title">电影标题：</string>
+    <string name="showtime">上演时间：</string>
+    <string name="auditorium_name">影厅：</string>
+    <string name="theater_name">影院：</string>
+    <string name="seat_location">座位：</string>
+    <string name="usage_status">Usage Status:</string>
+    <string name="welcome">欢迎光临！</string>
 </resources>

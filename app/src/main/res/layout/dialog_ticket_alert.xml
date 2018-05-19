@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="User Information"
+            android:text="@string/user_information"
             android:textAppearance="@style/TextAppearance.Title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -49,7 +49,6 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="8dp"
-            android:text="Username here"
             android:textColor="@color/md_black_color_code"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/avatar"
@@ -61,7 +60,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="Email Here"
             app:layout_constraintStart_toEndOf="@+id/avatar"
             app:layout_constraintTop_toBottomOf="@+id/username"/>
 
@@ -83,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="Ticket Information"
+            android:text="@string/ticket_information"
             android:textAppearance="@style/TextAppearance.Title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/avatar"/>
@@ -94,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="Movie Title:"
+            android:text="@string/movie_title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider2"/>
 
@@ -103,7 +101,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="Movie title here"
             android:textColor="@color/md_black_color_code"
             app:layout_constraintStart_toEndOf="@+id/txtvm"
             app:layout_constraintTop_toTopOf="@+id/txtvm"/>
@@ -113,7 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Showtime:"
+            android:text="@string/showtime"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtvm"/>
 
@@ -122,7 +119,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="Showtime here"
             android:textColor="@color/md_black_color_code"
             app:layout_constraintStart_toEndOf="@+id/txtvs"
             app:layout_constraintTop_toTopOf="@+id/txtvs"/>
@@ -132,7 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Auditorium Name:"
+            android:text="@string/auditorium_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtvs"/>
 
@@ -141,7 +137,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="Auditorium Name Here"
             android:textColor="@color/md_black_color_code"
             app:layout_constraintStart_toEndOf="@+id/txtva"
             app:layout_constraintTop_toTopOf="@+id/txtva"/>
@@ -151,7 +146,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Theater Name:"
+            android:text="@string/theater_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtva"/>
 
@@ -160,7 +155,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="Theater Name Here"
             android:textColor="@color/md_black_color_code"
             app:layout_constraintStart_toEndOf="@+id/txtvt"
             app:layout_constraintTop_toTopOf="@+id/txtvt"/>
@@ -170,7 +164,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Seat Location:"
+            android:text="@string/seat_location"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtvt"/>
 
@@ -179,7 +173,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="Seat Location Here"
             android:textColor="@color/md_black_color_code"
             app:layout_constraintStart_toEndOf="@+id/txtvse"
             app:layout_constraintTop_toTopOf="@+id/txtvse"/>
@@ -189,7 +182,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Usage Status:"
+            android:text="@string/usage_status"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtvse"/>
 
@@ -198,7 +191,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="Is Used Here"
             android:textColor="@color/md_black_color_code"
             app:layout_constraintStart_toEndOf="@+id/txtvi"
             app:layout_constraintTop_toTopOf="@+id/txtvi"/>
@@ -211,7 +203,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="Welcome to our theater!"
+            android:text="@string/welcome"
             android:textAppearance="@style/TextAppearance.Title"
             android:textColor="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"

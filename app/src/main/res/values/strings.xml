@@ -8,4 +8,13 @@
     <string name="loading2">Loading..</string>
     <string name="loading3">Loading...</string>
     <string name="back">Back</string>
+    <string name="user_information">User Information</string>
+    <string name="ticket_information">Ticket Information</string>
+    <string name="movie_title">Movie Title:</string>
+    <string name="showtime">Showtime:</string>
+    <string name="auditorium_name">Auditorium Name:</string>
+    <string name="theater_name">Theater Name:</string>
+    <string name="seat_location">Seat Location:</string>
+    <string name="usage_status">Usage Status:</string>
+    <string name="welcome">Welcome to our theater!</string>
 </resources>
