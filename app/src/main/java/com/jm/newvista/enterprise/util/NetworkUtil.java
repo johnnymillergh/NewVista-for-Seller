@@ -8,10 +8,11 @@ import com.tsy.sdk.myokhttp.MyOkHttp;
 
 public class NetworkUtil {
     public static MyOkHttp myOkHttp = new MyOkHttp();// Aliyun server ip: 39.106.218.175
+    private static final String BASE_URL = "http://140.143.144.123/";
     public static final String SIGN_UP_URL = "http://johnnymiller.site/servlet.customer.SignUp";
     public static final String LOG_IN_URL = "http://johnnymiller.site/servlet.customer.LogIn";
     public static final String USER_INFO_URL = "http://johnnymiller.site/servlet.customer.GetUserInfo";
-    public static final String GET_AVATAR_URL = "http://johnnymiller.site/customer/getAvatar.jsp?id=";
+    public static final String GET_AVATAR_URL = BASE_URL + "customer/getAvatar.jsp?id=";
     public static final String SECONDARY_LOGON_URL = "http://johnnymiller.site/servlet.customer.SecondaryLogon";
     public static final String GET_MOVIE_URL = "http://johnnymiller.site/servlet.customer.GetMovie";
     public static final String GET_MOVIE_POSTER_URL = "http://johnnymiller.site/customer/getMoviePoster.jsp?title=";
@@ -19,7 +20,7 @@ public class NetworkUtil {
             GET_TOP_MOVIE_POSTER_URL = "http://johnnymiller.site/customer/getTopMoviePoster.jsp?movieTitle=";
     public static final String
             USER_REVIEW_MANAGEMENT_URL = "http://johnnymiller.site/servlet.customer.UserReviewManagement";
-    public static final String ORDER_URL = "http://johnnymiller.site/seller/checkin.jsp";
+    public static final String ORDER_URL = BASE_URL +"seller/checkin.jsp";
     public static final String GET_TOP_MOVIE_URL = "http://johnnymiller.site/servlet.customer.GetTopMovie";
     public static final String GET_MOVIE_SCHEDULE_URL = "http://johnnymiller.site/servlet.customer.GetMovieSchedule";
     public static final String GET_THEATER_LOGO_URL = "http://johnnymiller.site/customer/getTheaterLogo.jsp?id=";
