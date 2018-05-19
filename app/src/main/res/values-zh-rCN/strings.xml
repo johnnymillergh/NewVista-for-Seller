@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">NewVistamai\'jia\'ban</string>
-    <string name="pause">Pause</string>
-    <string name="resume">Resume</string>
+    <string name="app_name">NewVista 商家版</string>
+    <string name="pause">暂停扫描</string>
+    <string name="resume">继续扫描</string>
     <string name="loading1">加载中.</string>
     <string name="loading2">加载中..</string>
     <string name="loading3">加载中...</string>
     <string name="loading0">加载中</string>
-    <string name="back">Back</string>
+    <string name="back">返回</string>
 </resources>
